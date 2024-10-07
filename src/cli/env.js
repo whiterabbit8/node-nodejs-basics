@@ -1,5 +1,9 @@
 const parseEnv = () => {
-    // Write your code here 
+    const variables = Object.entries(process.env)
+        .filter(([key]) => key.startsWith('RSS_'))
+        .map(([key, val]) => `${key}=${val}`)
+        .join('; ');
+    console.log(variables);
 };
 
 parseEnv();
